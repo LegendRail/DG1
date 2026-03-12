@@ -1,0 +1,364 @@
+/* Custom Variables */
+:root {
+    --primary-blue: #87ceea;
+    --light-blue: #bfe5f5; /* Biru keputihan */
+    --bg-dark: #09090b; /* Warna latar sangat gelap minimalis */
+    --card-bg: rgba(135, 206, 234, 0.08); /* Pengganti merah gelap pada card */
+    --text-main: #ffffff;
+    --text-muted: #a1a1aa;
+    --font-heading: 'Agoka', 'Poppins', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+}
+
+/* Typography Headings */
+h1, h2, h3, .logo, .brand, .tab-btn, .season-btn {
+    font-family: var(--font-heading);
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%);
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: var(--bg-dark);
+}
+
+.logo h2 {
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--light-blue);
+}
+
+.nav-links a.active {
+    background-color: var(--primary-blue);
+    color: var(--bg-dark);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.hero-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(9,9,11,1) 15%, rgba(9,9,11,0.4) 50%, rgba(9,9,11,0.1) 100%),
+                linear-gradient(to top, rgba(9,9,11,1) 0%, transparent 40%);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 600px;
+    margin-top: 50px;
+}
+
+.duration {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+}
+
+.brand {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.brand .original {
+    font-size: 0.7rem;
+    font-weight: 400;
+    vertical-align: top;
+    color: var(--text-muted);
+}
+
+.main-title {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin: 10px 0;
+    text-transform: uppercase;
+}
+
+.metadata {
+    display: flex;
+    gap: 15px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: var(--light-blue);
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Buttons */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.btn-play {
+    background-color: var(--primary-blue);
+    color: var(--bg-dark);
+}
+
+.btn-play:hover {
+    background-color: var(--light-blue);
+}
+
+.btn-list {
+    background-color: transparent;
+    border: 2px solid var(--text-main);
+    color: var(--text-main);
+}
+
+.btn-list:hover {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+/* Main Content Section */
+.main-content {
+    padding: 0 5% 50px 5%;
+}
+
+/* Tabs */
+.content-tabs {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 5px;
+    transition: 0.3s;
+}
+
+.tab-btn:hover {
+    color: var(--text-main);
+}
+
+.tab-btn.active {
+    color: var(--primary-blue);
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-blue);
+    border-radius: 2px;
+}
+
+.divider {
+    border: none;
+    height: 1px;
+    background-color: #333;
+    margin-bottom: 20px;
+}
+
+/* Season Selector */
+.season-selector {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.season-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.season-btn.active {
+    color: var(--text-main);
+}
+
+/* Episodes Grid */
+.episodes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 25px;
+}
+
+.episode-card {
+    display: flex;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    height: 130px;
+    transition: transform 0.3s, background-color 0.3s;
+    border: 1px solid rgba(135, 206, 234, 0.05); /* Outline tipis biru */
+}
+
+.episode-card:hover {
+    transform: scale(1.02);
+    background-color: rgba(135, 206, 234, 0.15);
+}
+
+.ep-img-wrapper {
+    width: 40%;
+    height: 100%;
+}
+
+.ep-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ep-info {
+    width: 60%;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ep-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--primary-blue);
+}
+
+.ep-info .date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.ep-info p {
+    font-size: 0.85rem;
+    color: var(--light-blue);
+    line-height: 1.3;
+}
+
+/* Footer */
+footer {
+    padding: 40px 5%;
+    text-align: center;
+    background-color: #050505;
+    border-top: 1px solid #1a1a1a;
+}
+
+.footer-logo {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+footer p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    .episodes-grid {
+        grid-template-columns: 1fr;
+    }
+    .nav-links {
+        display: none; /* Hide on mobile for simplicity in this demo */
+    }
+}
